@@ -1,11 +1,12 @@
-# LaTeX + Git + Travis
+### LaTeX + Git + Travis
+[![Build Status](https://travis-ci.org/gvacaliuc/travis-ci-latex-pdf.svg?branch=master)](https://travis-ci.org/gvacaliuc/travis-ci-latex-pdf)
 
 This repo was forked from
 [PHPirates](https://github.com/PHPirates/travis-ci-latex-pdf) (original repo
 preserved below) so that I could maintain the install scripts and install them
 on Travis CI with `curl`.  Observe example usage below.
 
-## Usage (in `.travis.yml`)
+### Usage (in `.travis.yml`)
 ```yaml
 install:
   - curl https://raw.githubusercontent.com/gvacaliuc/travis-ci-latex-pdf/master/texlive_install.sh > /tmp/texlive_install.sh
