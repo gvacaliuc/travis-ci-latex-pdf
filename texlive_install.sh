@@ -1,9 +1,10 @@
 #!/usr/bin/env sh
 
 # Originally from https://github.com/latex3/latex3
+# and then from https://github.com/PHPirates/travis-ci-latex-pdf
 
 # This script is used for testing using Travis
-# It is intended to work on their VM set up: Ubuntu 12.04 LTS
+# It is intended to work on their Trusty VM set up: Ubuntu 14.04 LTS
 # A minimal current TL is installed adding only the packages that are
 # required
 
@@ -16,6 +17,7 @@ if ! command -v texlua > /dev/null; then
   cd install-tl-20*
 
   # Install a minimal system
+  curl https://raw.githubusercontent.com/gvacaliuc/travis-ci-latex-pdf/master/texlive.profile > /tmp/texlive.profile
   ./install-tl --profile=../texlive/texlive.profile
 
   cd ..
