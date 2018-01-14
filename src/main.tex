@@ -1,57 +1,114 @@
-%%
-%% Author: s156757
-%% 21-10-2017
-%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Preamble
-\documentclass{exam}
-% Test requiring some non-standard packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The template from Wenneker has been modified and expanded
+% considerably, notably with my packages and document configurations.
+% 
+% Author:
+% Gabriel Vacaliuc
+% 
+% Version 2.1 (01-14-18)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[dutch]{babel} % May be necessary to delete auxiliary files after changing.
-\usepackage[fleqn]{amsmath} % left align equations option
-\usepackage{amsthm} % proof environments
-\usepackage{amssymb} % some symbols like probability P, or real number R
-\usepackage{mathtools} % improvement over amsmath, like \coloneqq 
-\usepackage{enumerate} % numbered list
-\usepackage{enumitem} % Provides [resume] option for enumerate
-\usepackage{thmtools} % define custom to prove environments
-\usepackage{stmaryrd} % \lightning
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
 
-\usepackage{xcolor} % colors
-\usepackage{pdfpages} % to include external pdfs
-\usepackage{centernot} % \centernot \implies looks correct
-\usepackage{tikz} % Used for drawings
-\usepackage{imakeidx} % Used for index
-\usepackage[makeroom]{cancel} % to draw a diagonal line through formulas
-\usepackage{hyperref} % should make index clickable
-\usepackage{bookmark} % Used for pdf bookmarks, needs to be loaded AFTER hyperref
-\usepackage{pgfplots} % Drawings!
-\usepackage{bm} % bold math, \bm{}
-\usepackage{listings} % to include code with env. lstlisting
-\usepackage{graphicx} % to use \includegraphics
-\usepackage{booktabs} % Better spacing for tables
-\usepackage{polynom} % Polynomial long division
+\documentclass[paper=letter, fontsize=12pt]{article}
 
-\usepackage{marvosym} % Extra math symbols
-\usepackage{amsfonts} % An extended set of math fonts
-%\usepackage{fancyhdr} % Nicer page headers/footers. WARNING clashes with exam class!
-\usepackage{ulem} % Provides an \ul (underline) command which will break over line ends
-\usepackage{iflang}
-\usepackage[margin=8em]{geometry} % Adjust page margins
-\usepackage[default,osfigures]{opensans} % Open Sans typeface
-\usepackage{algorithm} % Algorithm environment
-\usepackage[noend]{algpseudocode} % Layout for algorithmicx package
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage[section]{placeins}  % prevent figures / eqns / tables 
+                                % from slipping out of section.
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, 
+                                                 % the default font and small 
+                                                 % caps 
 
-% Document
+\usepackage{fancyhdr} % Custom headers and footers
+
+% For algorithms
+\usepackage{algorithm}
+\usepackage[compatible]{algpseudocode}
+
+\usepackage{ragged2e} % Text alignment
+\usepackage[margin=1in]{geometry} % 1 inch margins
+\usepackage{tikz} % Not always necessary, but allows very customizable 
+                  % figures / object placement
+\usepackage{enumitem} % get more out of enumerate
+
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom 
+                       % headers and footers
+\fancyhead{} % No page header
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections 
+\numberwithin{figure}{section} % Number figures within sections 
+\numberwithin{table}{section} % Number tables within sections 
+
+\setlength\parindent{4pt} % 4pt indentation for paragraphs
+\setlength{\parskip}{\baselineskip} % adds some spacing in between paragraphs
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command
+                                                % with 1 argument of height
+\newcommand{\fancyline}{\\ \horrule{0.5pt} \vspace{0.1cm}} % fancy line to put
+                                                           % under questions
+
+%  Some commands for algorithm environments                                            
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmicforall}{\textbf{for each}}
+\newcommand{\algorithmiccontinue}{\textbf{continue}}
+\algloopdefx{RETURN}[1][]{\textbf{return} #1}
+
+% useful math shortcuts
+\newcommand{\lagr}[1]{\mathcal{L}\left( #1 \right)}
+\newcommand{\expval}[1]{E\left[#1\right]}
+\newcommand{\var}[1]{\text{var}\left(#1\right)}
+\renewcommand{\det}[1]{\text{det}\left(#1\right)}
+\newcommand{\diag}[1]{\text{diag}\left[#1\right]}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{	
+\normalfont \normalsize 
+\textsc{rice university} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Assignment Title \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Gabriel Vacaliuc} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
 \begin{document}
 
-    Hello!
-    This is a new release $\lightning$.
-    \input{chapter1}
+\maketitle % Print the title
 
-    They said~\cite{book1}.
-
-    \bibliography{books}
-    \bibliographystyle{plain}
+%----------------------------------------------------------------------------------------
+%   CONTENT
+%----------------------------------------------------------------------------------------
 
 \end{document}
