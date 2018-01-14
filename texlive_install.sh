@@ -78,7 +78,8 @@ tlmgr install   \
   fancyvrb      \
   makecmds      \
   imakeidx      \
-  placeins
+  placeins      \
+  sectsty
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
