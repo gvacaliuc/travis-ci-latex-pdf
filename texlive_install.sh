@@ -77,7 +77,8 @@ tlmgr install   \
   polynom       \
   fancyvrb      \
   makecmds      \
-  imakeidx
+  imakeidx      \
+  placeins
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
