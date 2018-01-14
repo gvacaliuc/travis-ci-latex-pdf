@@ -18,7 +18,7 @@ if ! command -v texlua > /dev/null; then
 
   # Install a minimal system
   curl https://raw.githubusercontent.com/gvacaliuc/travis-ci-latex-pdf/master/texlive.profile > /tmp/texlive.profile
-  ./install-tl --profile=../texlive/texlive.profile
+  ./install-tl --profile=/tmp/texlive.profile
 
   cd ..
 fi
