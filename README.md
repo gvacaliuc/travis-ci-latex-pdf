@@ -1,3 +1,28 @@
+# LaTeX + Git + Travis
+
+This repo was forked from
+[PHPirates](https://github.com/PHPirates/travis-ci-latex-pdf) (original repo
+preserved below) so that I could maintain the install scripts and install them
+on Travis CI with `curl`.  Observe example usage below.
+
+## Usage (in `.travis.yml`)
+```yaml
+install:
+  - curl https://raw.githubusercontent.com/gvacaliuc/travis-ci-latex-pdf/master/texlive_install.sh > /tmp/texlive_install.sh
+  - source /tmp/texlive_install.sh
+cache:
+  directories:
+    - /tmp/texlive
+    - $HOME/.texlive
+script:
+- mkdir _build
+- pdflatex -interactionmode=nonstop -halt-on-error -output-directory _build ./main.tex
+- pdflatex -interactionmode=nonstop -halt-on-error -output-directory _build ./main.tex
+```
+
+
+
+
 ### LaTeX + Git + Travis &rightarrow; release pdf
 
 [![Build Status](https://api.travis-ci.org/PHPirates/travis-ci-latex-pdf.svg)](https://travis-ci.org/PHPirates/travis-ci-latex-pdf)
